@@ -1,0 +1,11 @@
+libaio.so.1
+libc.so.6
+libdevmapper.so.1.02
+libdl.so.2
+libjson-c.so.2
+libm.so.6
+libpthread.so.0
+libreadline.so.7
+libsystemd.so.0
+libudev.so.1
+liburcu.so.6
