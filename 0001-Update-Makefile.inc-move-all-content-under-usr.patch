@@ -1,0 +1,56 @@
+From 2bbb1fc6c31a8c7e8a25a7030beb6d404797426f Mon Sep 17 00:00:00 2001
+From: William Douglas <william.douglas@intel.com>
+Date: Tue, 30 Jan 2018 18:38:07 +0000
+Subject: [PATCH] Update Makefile.inc move all content under /usr
+
+---
+ Makefile.inc | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
+
+diff --git a/Makefile.inc b/Makefile.inc
+index 29c290a..a0fe98f 100644
+--- a/Makefile.inc
++++ b/Makefile.inc
+@@ -42,28 +42,28 @@ ifndef SYSTEMD
+ endif
+ 
+ ifndef SYSTEMDPATH
+-	SYSTEMDPATH=usr/lib
++	SYSTEMDPATH=lib
+ endif
+ 
+ prefix		=
+-exec_prefix	= $(prefix)
+-usr_prefix	= $(prefix)
++exec_prefix	= $(prefix)/usr
++usr_prefix	= $(prefix)/usr
+ bindir		= $(exec_prefix)/sbin
+-libudevdir	= $(prefix)/$(SYSTEMDPATH)/udev
++libudevdir	= $(usr_prefix)/$(SYSTEMDPATH)/udev
+ udevrulesdir	= $(libudevdir)/rules.d
+ multipathdir	= $(TOPDIR)/libmultipath
+-man8dir		= $(prefix)/usr/share/man/man8
+-man5dir		= $(prefix)/usr/share/man/man5
+-man3dir		= $(prefix)/usr/share/man/man3
+-syslibdir	= $(prefix)/$(LIB)
++man8dir		= $(usr_prefix)/share/man/man8
++man5dir		= $(usr_prefix)/share/man/man5
++man3dir		= $(usr_prefix)/share/man/man3
++syslibdir	= $(usr_prefix)/$(LIB)
+ usrlibdir	= $(usr_prefix)/$(LIB)
+-libdir		= $(prefix)/$(LIB)/multipath
+-unitdir		= $(prefix)/$(SYSTEMDPATH)/systemd/system
++libdir		= $(usr_prefix)/$(LIB)/multipath
++unitdir		= $(usr_prefix)/$(SYSTEMDPATH)/systemd/system
+ mpathpersistdir	= $(TOPDIR)/libmpathpersist
+ mpathcmddir	= $(TOPDIR)/libmpathcmd
+ thirdpartydir	= $(TOPDIR)/third-party
+ libdmmpdir	= $(TOPDIR)/libdmmp
+-includedir	= $(prefix)/usr/include
++includedir	= $(usr_prefix)/include
+ pkgconfdir	= $(usrlibdir)/pkgconfig
+ 
+ GZIP		= gzip -9 -c
+-- 
+2.16.1
+

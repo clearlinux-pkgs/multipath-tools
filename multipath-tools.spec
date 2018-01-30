@@ -4,7 +4,7 @@
 #
 Name     : multipath-tools
 Version  : 0.7.4
-Release  : 1
+Release  : 2
 URL      : http://localhost/cgit/projects/multipath-tools/snapshot/multipath-tools-0.7.4.tar.gz
 Source0  : http://localhost/cgit/projects/multipath-tools/snapshot/multipath-tools-0.7.4.tar.gz
 Summary  : Device mapper multipath management library
@@ -12,6 +12,7 @@ Group    : Development/Tools
 License  : LGPL-2.0
 Requires: multipath-tools-bin
 Requires: multipath-tools-config
+Requires: multipath-tools-lib
 Requires: multipath-tools-doc
 BuildRequires : libaio-dev
 BuildRequires : pkgconfig(devmapper)
@@ -19,6 +20,7 @@ BuildRequires : pkgconfig(json-c)
 BuildRequires : pkgconfig(liburcu)
 BuildRequires : pkgconfig(ncurses)
 BuildRequires : readline-dev
+Patch1: 0001-Update-Makefile.inc-move-all-content-under-usr.patch
 
 %description
 multipath-tools for Linux <http://christophe.varoqui.free.fr/>
@@ -45,6 +47,7 @@ config components for the multipath-tools package.
 %package dev
 Summary: dev components for the multipath-tools package.
 Group: Development
+Requires: multipath-tools-lib
 Requires: multipath-tools-bin
 Provides: multipath-tools-devel
 
@@ -60,53 +63,33 @@ Group: Documentation
 doc components for the multipath-tools package.
 
 
+%package lib
+Summary: lib components for the multipath-tools package.
+Group: Libraries
+
+%description lib
+lib components for the multipath-tools package.
+
+
 %prep
 %setup -q -n multipath-tools-0.7.4
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1517260563
+export SOURCE_DATE_EPOCH=1517337668
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1517260563
+export SOURCE_DATE_EPOCH=1517337668
 rm -rf %{buildroot}
 %make_install
 
 %files
 %defattr(-,root,root,-)
-/lib64/libdmmp.so
-/lib64/libdmmp.so.0.1.0
-/lib64/libmpathcmd.so
-/lib64/libmpathcmd.so.0
-/lib64/libmpathpersist.so
-/lib64/libmpathpersist.so.0
-/lib64/libmultipath.so
-/lib64/libmultipath.so.0
-/lib64/multipath/libcheckcciss_tur.so
-/lib64/multipath/libcheckdirectio.so
-/lib64/multipath/libcheckemc_clariion.so
-/lib64/multipath/libcheckhp_sw.so
-/lib64/multipath/libcheckrdac.so
-/lib64/multipath/libcheckreadsector0.so
-/lib64/multipath/libchecktur.so
-/lib64/multipath/libprioalua.so
-/lib64/multipath/libprioconst.so
-/lib64/multipath/libpriodatacore.so
-/lib64/multipath/libprioemc.so
-/lib64/multipath/libpriohds.so
-/lib64/multipath/libpriohp_sw.so
-/lib64/multipath/libprioiet.so
-/lib64/multipath/libprioontap.so
-/lib64/multipath/libpriopath_latency.so
-/lib64/multipath/libpriorandom.so
-/lib64/multipath/libpriordac.so
-/lib64/multipath/libpriosysfs.so
-/lib64/multipath/libprioweightedpath.so
-/lib64/pkgconfig/libdmmp.pc
 /usr/lib/udev/kpartx_id
 
 %files bin
@@ -130,9 +113,41 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 /usr/include/*.h
 /usr/include/libdmmp/libdmmp.h
+/usr/lib64/libdmmp.so
+/usr/lib64/libmpathcmd.so
+/usr/lib64/libmpathpersist.so
+/usr/lib64/libmultipath.so
+/usr/lib64/pkgconfig/libdmmp.pc
 
 %files doc
 %defattr(-,root,root,-)
 %doc /usr/share/man/man3/*
 %doc /usr/share/man/man5/*
 %doc /usr/share/man/man8/*
+
+%files lib
+%defattr(-,root,root,-)
+/usr/lib64/libdmmp.so.0.1.0
+/usr/lib64/libmpathcmd.so.0
+/usr/lib64/libmpathpersist.so.0
+/usr/lib64/libmultipath.so.0
+/usr/lib64/multipath/libcheckcciss_tur.so
+/usr/lib64/multipath/libcheckdirectio.so
+/usr/lib64/multipath/libcheckemc_clariion.so
+/usr/lib64/multipath/libcheckhp_sw.so
+/usr/lib64/multipath/libcheckrdac.so
+/usr/lib64/multipath/libcheckreadsector0.so
+/usr/lib64/multipath/libchecktur.so
+/usr/lib64/multipath/libprioalua.so
+/usr/lib64/multipath/libprioconst.so
+/usr/lib64/multipath/libpriodatacore.so
+/usr/lib64/multipath/libprioemc.so
+/usr/lib64/multipath/libpriohds.so
+/usr/lib64/multipath/libpriohp_sw.so
+/usr/lib64/multipath/libprioiet.so
+/usr/lib64/multipath/libprioontap.so
+/usr/lib64/multipath/libpriopath_latency.so
+/usr/lib64/multipath/libpriorandom.so
+/usr/lib64/multipath/libpriordac.so
+/usr/lib64/multipath/libpriosysfs.so
+/usr/lib64/multipath/libprioweightedpath.so
