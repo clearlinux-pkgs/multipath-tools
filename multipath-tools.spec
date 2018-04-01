@@ -4,7 +4,7 @@
 #
 Name     : multipath-tools
 Version  : 0.7.4
-Release  : 4
+Release  : 5
 URL      : http://localhost/cgit/projects/multipath-tools/snapshot/multipath-tools-0.7.4.tar.gz
 Source0  : http://localhost/cgit/projects/multipath-tools/snapshot/multipath-tools-0.7.4.tar.gz
 Summary  : Device mapper multipath management library
