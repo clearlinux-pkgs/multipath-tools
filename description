@@ -1,0 +1,4 @@
+A package that provides binaries to drive the Device Mapper multipathing
+driver: multipath (device mapper target autoconfig), multipathd (multipath
+daemon), mpathpersist (management of SCSI persistent reservations on dm
+multipath devices), and kpartx (creates device maps from partition tables).

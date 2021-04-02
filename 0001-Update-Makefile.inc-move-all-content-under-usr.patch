@@ -1,4 +1,4 @@
-From df3eee3a1e1858f5b63170c8012d506f6a348746 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: William Douglas <william.douglas@intel.com>
 Date: Wed, 16 Oct 2019 10:37:09 +0800
 Subject: [PATCH] Update Makefile.inc move all content under /usr
@@ -9,10 +9,10 @@ Re-submitter: santoshkumar <santoshkumar.laxminarayan.rai@intel.com>
  1 file changed, 11 insertions(+), 11 deletions(-)
 
 diff --git a/Makefile.inc b/Makefile.inc
-index 56c3eda..bb6a5b7 100644
+index f1e2313..9ec3bff 100644
 --- a/Makefile.inc
 +++ b/Makefile.inc
-@@ -47,29 +47,29 @@ ifndef SYSTEMD
+@@ -49,30 +49,30 @@ ifndef SYSTEMD
  endif
  
  ifndef SYSTEMDPATH
@@ -45,6 +45,7 @@ index 56c3eda..bb6a5b7 100644
 +unitdir		= $(usr_prefix)/$(SYSTEMDPATH)/systemd/system
  mpathpersistdir	= $(TOPDIR)/libmpathpersist
  mpathcmddir	= $(TOPDIR)/libmpathcmd
+ mpathvaliddir	= $(TOPDIR)/libmpathvalid
  thirdpartydir	= $(TOPDIR)/third-party
  libdmmpdir	= $(TOPDIR)/libdmmp
  nvmedir		= $(TOPDIR)/libmultipath/nvme
@@ -53,6 +54,3 @@ index 56c3eda..bb6a5b7 100644
  pkgconfdir	= $(usrlibdir)/pkgconfig
  
  GZIP		= gzip -9 -c
--- 
-2.23.0
-
