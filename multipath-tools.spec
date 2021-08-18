@@ -4,7 +4,7 @@
 #
 Name     : multipath-tools
 Version  : 0.8.6
-Release  : 11
+Release  : 12
 URL      : https://github.com/opensvc/multipath-tools/archive/0.8.6/multipath-tools-0.8.6.tar.gz
 Source0  : https://github.com/opensvc/multipath-tools/archive/0.8.6/multipath-tools-0.8.6.tar.gz
 Summary  : Device mapper multipath management library
@@ -104,20 +104,20 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1617337012
+export SOURCE_DATE_EPOCH=1629305592
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1617337012
+export SOURCE_DATE_EPOCH=1629305592
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/multipath-tools
 cp %{_builddir}/multipath-tools-0.8.6/COPYING %{buildroot}/usr/share/package-licenses/multipath-tools/ba8966e2473a9969bdcab3dc82274c817cfd98a1
