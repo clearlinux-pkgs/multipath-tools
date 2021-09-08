@@ -59,7 +59,7 @@ libmpathvalid.so.0:mpathvalid_get_mode
 libmpathvalid.so.0:mpathvalid_init
 libmpathvalid.so.0:mpathvalid_is_path
 libmpathvalid.so.0:mpathvalid_reload_config
-libmultipath.so.0:LIBMULTIPATH_5.0.0
+libmultipath.so.0:LIBMULTIPATH_9.0.0
 libmultipath.so.0:__set_no_path_retry
 libmultipath.so.0:_dm_flush_map
 libmultipath.so.0:_print_multipath_topology
@@ -73,8 +73,10 @@ libmultipath.so.0:alloc_multipath
 libmultipath.so.0:alloc_path
 libmultipath.so.0:alloc_path_with_pathinfo
 libmultipath.so.0:alloc_strvec
+libmultipath.so.0:append_strbuf_str
 libmultipath.so.0:change_foreign
 libmultipath.so.0:check_alias_settings
+libmultipath.so.0:check_daemon
 libmultipath.so.0:check_foreign
 libmultipath.so.0:checker_clear_message
 libmultipath.so.0:checker_disable
@@ -83,6 +85,7 @@ libmultipath.so.0:checker_is_sync
 libmultipath.so.0:checker_message
 libmultipath.so.0:checker_name
 libmultipath.so.0:checker_state_name
+libmultipath.so.0:cleanup_charp
 libmultipath.so.0:cleanup_lock
 libmultipath.so.0:cleanup_mutex
 libmultipath.so.0:close_fd
@@ -91,8 +94,6 @@ libmultipath.so.0:convert_dev
 libmultipath.so.0:count_active_paths
 libmultipath.so.0:delete_all_foreign
 libmultipath.so.0:delete_foreign
-libmultipath.so.0:disassemble_map
-libmultipath.so.0:disassemble_status
 libmultipath.so.0:dlog
 libmultipath.so.0:dm_cancel_deferred_remove
 libmultipath.so.0:dm_enablegroup
@@ -101,10 +102,8 @@ libmultipath.so.0:dm_flush_map_nopaths
 libmultipath.so.0:dm_flush_maps
 libmultipath.so.0:dm_get_info
 libmultipath.so.0:dm_get_major_minor
-libmultipath.so.0:dm_get_map
 libmultipath.so.0:dm_get_maps
 libmultipath.so.0:dm_get_multipath
-libmultipath.so.0:dm_get_status
 libmultipath.so.0:dm_get_uuid
 libmultipath.so.0:dm_geteventnr
 libmultipath.so.0:dm_is_mpath
@@ -119,6 +118,7 @@ libmultipath.so.0:dm_switchgroup
 libmultipath.so.0:domap
 libmultipath.so.0:ensure_directories_exist
 libmultipath.so.0:extract_hwe_from_path
+libmultipath.so.0:fill_strbuf
 libmultipath.so.0:filter_devnode
 libmultipath.so.0:filter_path
 libmultipath.so.0:filter_wwid
@@ -149,6 +149,8 @@ libmultipath.so.0:get_pgpolicy_id
 libmultipath.so.0:get_prio_timeout
 libmultipath.so.0:get_refwwid
 libmultipath.so.0:get_state
+libmultipath.so.0:get_strbuf_len
+libmultipath.so.0:get_strbuf_str
 libmultipath.so.0:get_target_port_group
 libmultipath.so.0:get_target_port_group_support
 libmultipath.so.0:get_udev_device
@@ -192,6 +194,7 @@ libmultipath.so.0:pathcount
 libmultipath.so.0:pathinfo
 libmultipath.so.0:print_all_paths
 libmultipath.so.0:print_foreign_topology
+libmultipath.so.0:print_strbuf
 libmultipath.so.0:pthread_cond_init_mono
 libmultipath.so.0:put_multipath_config
 libmultipath.so.0:recv_packet
@@ -204,6 +207,7 @@ libmultipath.so.0:remove_maps
 libmultipath.so.0:remove_wwid
 libmultipath.so.0:replace_wwids
 libmultipath.so.0:reset_checker_classes
+libmultipath.so.0:reset_strbuf
 libmultipath.so.0:select_action
 libmultipath.so.0:select_all_tg_pt
 libmultipath.so.0:select_find_multipaths_timeout
@@ -237,6 +241,7 @@ libmultipath.so.0:snprint_tgt_wwnn
 libmultipath.so.0:snprint_tgt_wwpn
 libmultipath.so.0:snprint_wildcards
 libmultipath.so.0:start_checker_thread
+libmultipath.so.0:steal_strbuf_str
 libmultipath.so.0:stop_io_err_stat_thread
 libmultipath.so.0:store_path
 libmultipath.so.0:store_pathinfo
@@ -251,6 +256,7 @@ libmultipath.so.0:sysfs_is_multipathed
 libmultipath.so.0:timespecsub
 libmultipath.so.0:trigger_partitions_udev_change
 libmultipath.so.0:trigger_paths_udev_change
+libmultipath.so.0:truncate_strbuf
 libmultipath.so.0:uevent_dispatch
 libmultipath.so.0:uevent_get_dm_str
 libmultipath.so.0:uevent_get_env_positive_int
