@@ -5,19 +5,23 @@ Subject: [PATCH] Update Makefile.inc move all content under /usr
 
 Re-submitter: santoshkumar <santoshkumar.laxminarayan.rai@intel.com>
 ---
- Makefile.inc | 22 +++++++++++-----------
- 1 file changed, 11 insertions(+), 11 deletions(-)
+ Makefile.inc | 24 ++++++++++++------------
+ 1 file changed, 12 insertions(+), 12 deletions(-)
 
 diff --git a/Makefile.inc b/Makefile.inc
-index f1e2313..9ec3bff 100644
+index d24da43..41e7298 100644
 --- a/Makefile.inc
 +++ b/Makefile.inc
-@@ -49,30 +49,30 @@ ifndef SYSTEMD
+@@ -48,7 +48,7 @@ ifndef SYSTEMD
  endif
  
  ifndef SYSTEMDPATH
 -	SYSTEMDPATH=usr/lib
 +	SYSTEMDPATH=lib
+ endif
+ 
+ ifndef DEVMAPPER_INCDIR
+@@ -73,27 +73,27 @@ ifndef LINUX_HEADERS_INCDIR
  endif
  
  prefix		=
@@ -29,6 +33,8 @@ index f1e2313..9ec3bff 100644
 -libudevdir	= $(prefix)/$(SYSTEMDPATH)/udev
 +libudevdir	= $(usr_prefix)/$(SYSTEMDPATH)/udev
  udevrulesdir	= $(libudevdir)/rules.d
+-modulesloaddir  = $(prefix)/$(SYSTEMDPATH)/modules-load.d
++modulesloaddir  = $(usr_prefix)/$(SYSTEMDPATH)/modules-load.d
  multipathdir	= $(TOPDIR)/libmultipath
 -man8dir		= $(prefix)/usr/share/man/man8
 -man5dir		= $(prefix)/usr/share/man/man5
@@ -53,4 +59,4 @@ index f1e2313..9ec3bff 100644
 +includedir	= $(usr_prefix)/include
  pkgconfdir	= $(usrlibdir)/pkgconfig
  
- GZIP		= gzip -9 -c
+ GZIP_PROG	= gzip -9 -c
