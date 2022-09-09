@@ -4,7 +4,6 @@ libdevmapper.so.1.02
 libgcc_s.so.1
 libjson-c.so.5
 libm.so.6
-libreadline.so.8
 libsystemd.so.0
 libudev.so.1
 liburcu.so.8

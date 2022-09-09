@@ -9,10 +9,10 @@ Re-submitter: santoshkumar <santoshkumar.laxminarayan.rai@intel.com>
  1 file changed, 12 insertions(+), 12 deletions(-)
 
 diff --git a/Makefile.inc b/Makefile.inc
-index d24da43..41e7298 100644
+index 6399beb..4332712 100644
 --- a/Makefile.inc
 +++ b/Makefile.inc
-@@ -48,7 +48,7 @@ ifndef SYSTEMD
+@@ -54,7 +54,7 @@ ifndef SYSTEMD
  endif
  
  ifndef SYSTEMDPATH
@@ -21,7 +21,7 @@ index d24da43..41e7298 100644
  endif
  
  ifndef DEVMAPPER_INCDIR
-@@ -73,27 +73,27 @@ ifndef LINUX_HEADERS_INCDIR
+@@ -79,28 +79,28 @@ ifndef LINUX_HEADERS_INCDIR
  endif
  
  prefix		=
@@ -36,6 +36,7 @@ index d24da43..41e7298 100644
 -modulesloaddir  = $(prefix)/$(SYSTEMDPATH)/modules-load.d
 +modulesloaddir  = $(usr_prefix)/$(SYSTEMDPATH)/modules-load.d
  multipathdir	= $(TOPDIR)/libmultipath
+ mpathutildir	= $(TOPDIR)/libmpathutil
 -man8dir		= $(prefix)/usr/share/man/man8
 -man5dir		= $(prefix)/usr/share/man/man5
 -man3dir		= $(prefix)/usr/share/man/man3
@@ -58,5 +59,5 @@ index d24da43..41e7298 100644
 -includedir	= $(prefix)/usr/include
 +includedir	= $(usr_prefix)/include
  pkgconfdir	= $(usrlibdir)/pkgconfig
- 
- GZIP_PROG	= gzip -9 -c
+ plugindir       := $(prefix)/$(LIB)/multipath
+ configdir       := $(prefix)/etc/multipath/conf.d
