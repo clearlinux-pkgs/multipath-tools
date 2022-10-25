@@ -137,7 +137,7 @@ libmpathvalid.so.0:mpathvalid_get_mode
 libmpathvalid.so.0:mpathvalid_init
 libmpathvalid.so.0:mpathvalid_is_path
 libmpathvalid.so.0:mpathvalid_reload_config
-libmultipath.so.0:LIBMULTIPATH_16.0.0
+libmultipath.so.0:LIBMULTIPATH_17.0.0
 libmultipath.so.0:__snprint_config
 libmultipath.so.0:_dm_flush_map
 libmultipath.so.0:_print_multipath_topology

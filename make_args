@@ -1,0 +1,1 @@
+prefix=/usr includedir=/usr/include man8dir=/usr/share/man/man8 man5dir=/usr/share/man/man5 man3dir=/usr/share/man/man3 SYSTEMDPATH=lib
