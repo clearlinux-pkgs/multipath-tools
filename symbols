@@ -56,6 +56,7 @@ libmpathpersist.so.0:update_map_pr
 libmpathutil.so.0:LIBMPATHCOMMON_1.0.0
 libmpathutil.so.0:LIBMPATHUTIL_1.0
 libmpathutil.so.0:LIBMPATHUTIL_1.1
+libmpathutil.so.0:LIBMPATHUTIL_1.2
 libmpathutil.so.0:LIBMULTIPATH_16.0.0
 libmpathutil.so.0:__append_strbuf_str
 libmpathutil.so.0:__get_strbuf_buf
@@ -67,10 +68,12 @@ libmpathutil.so.0:append_strbuf_quoted
 libmpathutil.so.0:append_strbuf_str
 libmpathutil.so.0:basenamecpy
 libmpathutil.so.0:cleanup_charp
+libmpathutil.so.0:cleanup_fclose
 libmpathutil.so.0:cleanup_fd_ptr
 libmpathutil.so.0:cleanup_free_ptr
 libmpathutil.so.0:cleanup_mutex
 libmpathutil.so.0:cleanup_ucharp
+libmpathutil.so.0:cleanup_vector_free
 libmpathutil.so.0:convert_dev
 libmpathutil.so.0:dlog
 libmpathutil.so.0:filepresent
@@ -138,7 +141,8 @@ libmpathvalid.so.0:mpathvalid_init
 libmpathvalid.so.0:mpathvalid_is_path
 libmpathvalid.so.0:mpathvalid_reload_config
 libmultipath.so.0:LIBMPATHCOMMON_1.0.0
-libmultipath.so.0:LIBMULTIPATH_17.0.0
+libmultipath.so.0:LIBMULTIPATH_18.0.0
+libmultipath.so.0:LIBMULTIPATH_18.1.0
 libmultipath.so.0:__snprint_config
 libmultipath.so.0:_dm_flush_map
 libmultipath.so.0:_print_multipath_topology
